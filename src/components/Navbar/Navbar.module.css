@@ -1,4 +1,19 @@
 .nav {
     grid-area: n;
     background: red;
+    padding: 20px;
   }
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+.item a:hover {
+  background: white;
+  color: black;
+}
+
+.item a.active {
+  text-decoration: underline;
+}
