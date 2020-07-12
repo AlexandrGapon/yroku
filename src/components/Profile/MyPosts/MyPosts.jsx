@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './MyPosts.module.css';
-import Post from './Post/Post.jsx'
+import Post from './Post/Post.jsx';
 
 const MyPosts = () => {
     return (
-        <div>
-            My posts
+        <div className={s.myPosts}>
+            <h3>My posts</h3>
+            <hr />
             <div>
                 <textarea></textarea>
                 <button>Add post</button>
