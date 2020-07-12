@@ -2,7 +2,7 @@
   display: grid;
 
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 1.2fr 10fr;
 
   grid-template-areas:
   "h h"
@@ -14,5 +14,5 @@
 
 .app-wrapper-content {
   grid-area: c;
-  background: blue;
+  background: rgba(179, 184, 189, 0.27);
 }
