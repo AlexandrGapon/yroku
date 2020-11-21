@@ -8,4 +8,11 @@
     grid-area: h;
     background: rgba(91, 161, 168, 0.3);
   }
+
+.loginBlock {
+  float: right;
+}
   
+.loginBlock a {
+  color: black;
+}
