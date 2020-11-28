@@ -48,32 +48,23 @@ export const addPost = (newPostBody) => ({ type: ADD_POST, newPostBody });
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 export const setUserStatus = (status) => ({ type: SET_USER_STATUS, status });
 
-export const getUserProfileTC = (userId) => {
-    return (dispatch) => {
-        profileAPI.getUserProfile(userId)
-            .then(data => {
-                dispatch(setUserProfile(data));
-            });
-    }
+export const getUserProfileTC = (userId) => async (dispatch) => {
+    let data = await profileAPI.getUserProfile(userId);
+
+    dispatch(setUserProfile(data));
 }
 
-export const getUserStatus = (userId) => {
-    return (dispatch) => {
-        profileAPI.getUserStatus(userId)
-            .then(response => {
-                dispatch(setUserStatus(response.data));
-            });
-    }
+export const getUserStatus = (userId) => async (dispatch) => {
+    let response = await profileAPI.getUserStatus(userId);
+
+    dispatch(setUserStatus(response.data));
 }
 
-export const updateProfileStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateProfileStatus(status)
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    dispatch(setUserStatus(status));
-                }
-            });
+export const updateProfileStatus = (status) => async (dispatch) => {
+    let response = await profileAPI.updateProfileStatus(status);
+
+    if (response.data.resultCode === 0) {
+        dispatch(setUserStatus(status));
     }
 }
 
