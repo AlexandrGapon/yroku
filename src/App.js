@@ -9,7 +9,7 @@ import News from './components/News/News.jsx';
 import UsersContainer from './components/Users/UsersContainer'
 import Settings from './components/Settings/Settings.jsx';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Login from './components/Login/Login';
+import LoginPage from './components/Login/LoginPage';
 import { initializeApp } from './components/redux/appReducer';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -40,7 +40,7 @@ class App extends React.Component {
               <Route path='/dialogs' render={ withSuspense(DialogsContainer) } />
               <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
               <Route path='/users' render={() => <UsersContainer />} />
-              <Route path='/login' render={() => <Login />} />
+              <Route path='/login' render={() => <LoginPage />} />
               <Route path='/news' component={News} />
               <Route path='/music' component={Music} />
               <Route path='/settings' component={Settings} />
